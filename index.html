@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Rakuten Product Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #f4f1ec; --ink: #3f3a36; --sub: #7a726b; --line: #ddd5ca; --sage: #6f8b77; --card: #fff; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font-family: 'Noto Sans JP', sans-serif; line-height: 1.85; }
+  header, main, footer { max-width: 1100px; margin: 0 auto; padding-left: 16px; padding-right: 16px; }
+  header { padding-top: 60px; padding-bottom: 36px; }
+  .eyebrow { font-size: 12px; letter-spacing: .28em; color: var(--sub); font-weight: 500; }
+  h1 { font-family: 'Zen Maru Gothic', sans-serif; font-weight: 900; font-size: clamp(28px, 5.4vw, 46px); line-height: 1.35; margin: 12px 0 18px; }
+  .lead { font-size: 14.5px; max-width: 760px; }
+  .lead + .lead { margin-top: 8px; }
+  .summary { margin-top: 26px; background: var(--card); border: 1px solid var(--line); padding: 20px 22px; font-size: 14px; max-width: 760px; }
+  .summary b { color: var(--sage); }
+  main { padding-bottom: 72px; }
+  .row { display: grid; grid-template-columns: minmax(0, 420px) minmax(0, 1fr); gap: 36px; align-items: start; padding: 32px 0; border-top: 1px solid var(--line); }
+  .row img { display: block; width: 100%; height: auto; border: 1px solid var(--line); background: #fff; }
+  .tag { font-size: 12px; letter-spacing: .2em; color: var(--sage); font-weight: 700; }
+  h2 { font-family: 'Zen Maru Gothic', sans-serif; font-size: 22px; font-weight: 900; margin: 4px 0 12px; line-height: 1.5; }
+  .why { font-size: 14.5px; }
+  .why + .why { margin-top: 8px; }
+  @media (max-width: 720px) { .row { grid-template-columns: 1fr; gap: 18px; } }
+  footer { padding-bottom: 56px; font-size: 12px; color: var(--sub); }
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">PORTFOLIO — RAKUTEN PRODUCT PAGE</div>
+  <h1>授乳クッションの<br>楽天商品ページ</h1>
+  <p class="lead">架空のベビー用品「授乳クッション ふわりと」を題材に、商品の強みの整理、ページの構成、キャッチコピー、画像制作までを一人で行った見本です。スマートフォンで見る縦長の商品ページ（横750px）と、第1商品画像（1000×1000px）を作りました。</p>
+  <p class="lead">各画像の横に、なぜその順番と見せ方にしたかを書いています。</p>
+  <div class="summary"><b>構成の考え方</b>　買う人は、授乳で腕や肩が疲れている産後のママと、出産祝いを探している家族の2通りです。そこで、前半は「疲れの原因は高さ」という気づきから高さ調整の話へつなげ、後半は長く使えることとラッピングで、贈る人の背中を押す順番にしました。</div>
+</header>
+<main>
+  <section class="row">
+    <img src="page/thumb.jpg" alt="第1商品画像。白いベッドの上のセージ色の授乳クッション" width="1000" height="1000" loading="lazy">
+    <div><div class="tag">THUMBNAIL</div><h2>第1商品画像</h2>
+      <p class="why">検索結果で最初に目に入る画像です。楽天の第1商品画像のガイドライン（文字は20%以内、枠線なし、背景は写真か白）に合わせ、文字は左上の小さな札1つにしました。</p>
+      <p class="why">文字が少ない分、写真で「やわらかそう」「部屋になじむ色」が伝わるよう、白いベッドと窓の光で撮る想定にしています。</p></div>
+  </section>
+  <section class="row">
+    <img src="page/s1.jpg" alt="ファーストビュー。授乳クッションに赤ちゃんを乗せたママの写真とキャッチコピー" width="750" height="1100" loading="lazy">
+    <div><div class="tag">01 FIRST VIEW</div><h2>腕で支える授乳から、まかせる授乳へ。</h2>
+      <p class="why">商品名より先に、使ったあとの変化を言葉にしました。授乳クッションを探す人は、すでに腕や肩のつらさを感じているので、そこに直接答えるコピーにしています。</p>
+      <p class="why">下の3つの丸で、比較されやすい点（高さ、素材、洗えるか）を最初の1枚で見せ、スクロールしなくても違いがわかるようにしました。</p></div>
+  </section>
+  <section class="row">
+    <img src="page/s2.jpg" alt="こんなことありませんか、という4つのお悩みのチェックリスト" width="750" height="1051" loading="lazy">
+    <div><div class="tag">02 PROBLEM</div><h2>お悩みの共感</h2>
+      <p class="why">機能の説明に入る前に、読む人が「自分のことだ」と思えるよう、授乳中に起こりやすい場面を4つ並べました。</p>
+      <p class="why">最後に「原因は高さかもしれない」と気づきを置くことで、次の高さ調整の話を自然に読み進めてもらえる流れにしています。</p></div>
+  </section>
+  <section class="row">
+    <img src="page/s3.jpg" alt="3つのこだわりのまとめ" width="750" height="913" loading="lazy">
+    <div><div class="tag">03 SUMMARY</div><h2>3つのこだわり</h2>
+      <p class="why">楽天の商品ページは途中で離れる人が多いので、詳しい説明の前に強みを3つにまとめて先に見せました。ここだけ見て決める人にも伝わるようにしています。</p></div>
+  </section>
+  <section class="row">
+    <img src="page/s4.jpg" alt="調整パッドの有無で高さが17cmと14cmに変わる図" width="750" height="1043" loading="lazy">
+    <div><div class="tag">04 POINT 1</div><h2>高さを2段階に</h2>
+      <p class="why">一番の強みなので、言葉より図で見せました。パッドがある場合とない場合を横に並べ、数字で高さの差がわかるようにしています。</p>
+      <p class="why">「誰に向いているか」を図の下に添え、自分がどちらを使うかを想像できるようにしました。</p></div>
+  </section>
+  <section class="row">
+    <img src="page/s5.jpg" alt="6重ガーゼの生地のアップと、ベランダで干したカバーの写真" width="750" height="1146" loading="lazy">
+    <div><div class="tag">05 POINT 2</div><h2>6重ガーゼと洗えるカバー</h2>
+      <p class="why">素材は写真の質感が一番伝わるので、生地のアップを大きく使いました。</p>
+      <p class="why">赤ちゃん用品は「汚れたらどうするか」を必ず気にされるため、洗濯の写真と洗濯表示の要点を同じ画像に入れています。</p></div>
+  </section>
+  <section class="row">
+    <img src="page/s6.jpg" alt="授乳、おすわりサポート、腰当て、ソファのクッションの4通りの使い方" width="750" height="1017" loading="lazy">
+    <div><div class="tag">06 POINT 3</div><h2>授乳期のあとも使える</h2>
+      <p class="why">「授乳期だけで使わなくなるのでは」という迷いに答えるため、使える時期を月齢つきで並べました。出産祝いを選ぶ家族にも、長く使えることが贈る理由になります。</p>
+      <p class="why">ベビー用品なので、寝かしつけに使わないことと見守りが必要なことを、同じ画像の中に必ず入れています。</p></div>
+  </section>
+  <section class="row">
+    <img src="page/s7.jpg" alt="セージ、オートミール、ローズの3色のクッション" width="750" height="1008" loading="lazy">
+    <div><div class="tag">07 COLOR</div><h2>カラー</h2>
+      <p class="why">3色を並べた写真と、色の名前と短い説明をセットにしました。画面では色が少し違って見えることがあるので、言葉でも色味を補っています。</p></div>
+  </section>
+  <section class="row">
+    <img src="page/s8.jpg" alt="商品仕様の表と出産祝いのラッピングの案内" width="750" height="1041" loading="lazy">
+    <div><div class="tag">08 SPEC</div><h2>仕様とラッピング</h2>
+      <p class="why">サイズ・素材・お手入れは、最後に表でまとめて確認できるようにしました。</p>
+      <p class="why">ページの一番下は、カートに入れる直前に見る場所なので、出産祝いのラッピングの案内を置き、贈り物として買う人の最後の一押しにしています。</p></div>
+  </section>
+</main>
+<footer>掲載の商品名「ふわりと」、商品、仕様はすべて架空のものです。写真は画像生成AIで作成しています。</footer>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #faf7f2; --ink: #4a4440; --sub: #8a817a; --sage: #7f9a86; --sage-l: #e6ede7; --rose: #d49c96; --line: #e7e0d6; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #333; font-family: 'Zen Maru Gothic', sans-serif; color: var(--ink); }
+  section { width: 750px; position: relative; overflow: hidden; background: var(--bg); margin-bottom: 30px; }
+  .en { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; color: var(--sage); letter-spacing: .06em; }
+  h2 { font-weight: 900; font-size: 44px; line-height: 1.45; letter-spacing: .04em; text-align: center; }
+  .lead { font-size: 25px; line-height: 1.9; text-align: center; color: var(--sub); }
+  .num { display: inline-block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 30px; color: #fff; background: var(--sage); width: 64px; height: 64px; line-height: 64px; border-radius: 50%; text-align: center; }
+  .pointhead { text-align: center; padding-top: 70px; }
+  .pointhead .en { font-size: 34px; display: block; margin: 14px 0 6px; }
+  mark { background: linear-gradient(transparent 62%, #f3dcd6 62%); color: inherit; }
+
+  /* 1. ファーストビュー */
+  #s1 { height: 1100px; }
+  #s1 img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 78%; }
+  #s1 .veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(250,247,242,.97) 0%, rgba(250,247,242,.9) 30%, rgba(250,247,242,0) 50%); }
+  #s1 .copy { position: absolute; top: 70px; left: 0; right: 0; text-align: center; }
+  #s1 .brand { font-size: 22px; letter-spacing: .3em; color: var(--sub); }
+  #s1 h1 { font-weight: 900; font-size: 58px; line-height: 1.4; margin-top: 22px; letter-spacing: .04em; }
+  #s1 .sub { font-size: 24px; margin-top: 18px; color: var(--sub); }
+  #s1 .badges { position: absolute; left: 0; right: 0; bottom: 48px; display: flex; justify-content: center; gap: 22px; }
+  #s1 .badge { width: 196px; height: 196px; border-radius: 50%; background: rgba(255,255,255,.93); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; box-shadow: 0 6px 20px rgba(74,68,64,.12); }
+  #s1 .badge b { font-size: 34px; color: var(--sage); font-weight: 900; line-height: 1.2; }
+  #s1 .badge span { font-size: 19px; margin-top: 6px; line-height: 1.4; }
+
+  /* 2. 悩み */
+  #s2 { padding: 80px 60px 70px; }
+  #s2 .q { font-size: 26px; text-align: center; color: var(--sub); }
+  #s2 h2 { margin-top: 12px; }
+  #s2 ul { list-style: none; margin-top: 44px; }
+  #s2 li { display: flex; align-items: center; gap: 22px; background: #fff; border: 2px solid var(--line); border-radius: 18px; padding: 24px 28px; font-size: 27px; font-weight: 500; margin-top: 18px; }
+  #s2 li svg { flex: none; }
+  #s2 .arrow { width: 0; height: 0; margin: 40px auto 0; border-left: 34px solid transparent; border-right: 34px solid transparent; border-top: 30px solid var(--sage); }
+  #s2 .answer { margin-top: 30px; font-size: 32px; font-weight: 700; text-align: center; line-height: 1.7; }
+
+  /* 3. 3つのこだわり */
+  #s3 { padding: 80px 50px 70px; background: var(--sage-l); }
+  #s3 .en { display: block; text-align: center; font-size: 34px; }
+  #s3 h2 { margin-top: 6px; }
+  #s3 .cards { margin-top: 40px; display: grid; gap: 20px; }
+  #s3 .card { display: flex; gap: 26px; align-items: center; background: #fff; border-radius: 22px; padding: 26px 30px; }
+  #s3 .card h3 { font-size: 30px; font-weight: 900; }
+  #s3 .card p { font-size: 21px; color: var(--sub); margin-top: 6px; line-height: 1.6; }
+
+  /* 4. 高さ */
+  #s4 { padding-bottom: 70px; }
+  #s4 h2 { margin-top: 16px; }
+  #s4 .lead { margin-top: 22px; padding: 0 60px; }
+  #s4 .diagram { margin: 46px auto 0; width: 640px; display: flex; justify-content: space-between; }
+  #s4 .diagram figure { width: 300px; text-align: center; }
+  #s4 figcaption { font-size: 23px; font-weight: 700; margin-top: 14px; }
+  #s4 figcaption small { display: block; font-weight: 400; font-size: 19px; color: var(--sub); margin-top: 4px; }
+  #s4 .tip { margin: 40px 60px 0; background: #fff; border-radius: 18px; padding: 24px 30px; font-size: 21px; line-height: 1.8; border-left: 8px solid var(--rose); }
+
+  /* 5. ガーゼ */
+  #s5 { padding-bottom: 70px; }
+  #s5 h2 { margin-top: 16px; }
+  #s5 .photo { margin: 40px 50px 0; height: 400px; border-radius: 26px; overflow: hidden; position: relative; }
+  #s5 .photo img { width: 100%; height: 100%; object-fit: cover; }
+  #s5 .photo .layers { position: absolute; right: 22px; bottom: 22px; background: rgba(255,255,255,.92); border-radius: 16px; padding: 14px 22px; font-size: 22px; font-weight: 700; }
+  #s5 .row { display: flex; gap: 26px; margin: 34px 50px 0; align-items: center; }
+  #s5 .row img { width: 270px; height: 270px; object-fit: cover; border-radius: 22px; }
+  #s5 .row h3 { font-size: 30px; font-weight: 900; line-height: 1.5; }
+  #s5 .row p { font-size: 21px; color: var(--sub); margin-top: 10px; line-height: 1.7; }
+  #s5 .care { display: flex; gap: 12px; margin-top: 16px; }
+  #s5 .care span { font-size: 18px; border: 2px solid var(--sage); color: var(--sage); border-radius: 30px; padding: 4px 16px; font-weight: 700; }
+
+  /* 6. 使い方 */
+  #s6 { padding-bottom: 60px; }
+  #s6 h2 { margin-top: 16px; }
+  #s6 .grid { margin: 40px 50px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  #s6 .use { background: #fff; border-radius: 22px; padding: 26px 20px 24px; text-align: center; border: 2px solid var(--line); }
+  #s6 .use .age { display: inline-block; font-size: 17px; background: var(--sage-l); color: var(--sage); font-weight: 700; border-radius: 20px; padding: 2px 14px; margin-top: 12px; }
+  #s6 .use h3 { font-size: 27px; font-weight: 900; margin-top: 8px; }
+  #s6 .note { margin: 30px 50px 0; font-size: 19px; line-height: 1.8; color: var(--sub); background: #fff4f2; border-radius: 16px; padding: 18px 24px; }
+  #s6 .note b { color: #b0605a; }
+
+  /* 7. カラー */
+  #s7 { padding: 80px 0 70px; background: #fff; }
+  #s7 .en { display: block; text-align: center; font-size: 34px; }
+  #s7 h2 { margin-top: 6px; }
+  #s7 img { display: block; width: 650px; height: 455px; object-fit: cover; border-radius: 26px; margin: 40px auto 0; }
+  #s7 .chips { display: flex; justify-content: center; gap: 48px; margin-top: 34px; }
+  #s7 .chip { text-align: center; font-size: 23px; font-weight: 700; }
+  #s7 .chip i { display: block; width: 84px; height: 84px; border-radius: 50%; margin: 0 auto 10px; }
+  #s7 .chip small { display: block; font-weight: 400; color: var(--sub); font-size: 18px; }
+
+  /* 8. 仕様 */
+  #s8 { padding: 80px 50px 70px; }
+  #s8 .en { display: block; text-align: center; font-size: 34px; }
+  #s8 h2 { margin-top: 6px; }
+  #s8 table { width: 100%; border-collapse: collapse; margin-top: 40px; font-size: 22px; background: #fff; border-radius: 18px; overflow: hidden; }
+  #s8 th { width: 190px; background: var(--sage-l); text-align: left; padding: 20px 24px; font-weight: 700; vertical-align: top; border-bottom: 2px solid #fff; }
+  #s8 td { padding: 20px 24px; line-height: 1.7; border-bottom: 2px solid var(--bg); }
+  #s8 .gift { margin-top: 34px; display: flex; gap: 24px; align-items: center; background: #fff4f2; border-radius: 22px; padding: 26px 30px; }
+  #s8 .gift h3 { font-size: 28px; font-weight: 900; }
+  #s8 .gift p { font-size: 20px; color: var(--sub); margin-top: 4px; line-height: 1.6; }
+
+  /* サムネイル(第1商品画像) */
+  #thumb { width: 1000px; height: 1000px; margin-bottom: 30px; }
+  #thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  #thumb .tag { position: absolute; left: 44px; top: 44px; background: rgba(255,255,255,.9); border-radius: 14px; padding: 16px 26px; font-size: 30px; font-weight: 700; line-height: 1.4; color: var(--ink); }
+  #thumb .tag small { display: block; font-size: 22px; font-weight: 500; color: var(--sage); }
+</style>
+</head>
+<body>
+
+<section id="thumb">
+  <img src="../img/hero.jpg" alt="">
+  <div class="tag"><small>授乳クッション ふわりと</small>高さ2段階・6重ガーゼ</div>
+</section>
+
+<section id="s1">
+  <img src="../img/scene.jpg" alt="">
+  <div class="veil"></div>
+  <div class="copy">
+    <div class="brand">授乳クッション　ふわりと</div>
+    <h1>腕で支える授乳から、<br>まかせる授乳へ。</h1>
+    <div class="sub">赤ちゃんの高さが決まると、肩と腕がラクになる</div>
+  </div>
+  <div class="badges">
+    <div class="badge"><b>2段階</b><span>パッドで<br>高さ調整</span></div>
+    <div class="badge"><b>6重</b><span>綿100%の<br>ガーゼカバー</span></div>
+    <div class="badge"><b>洗える</b><span>カバーは<br>洗濯機OK</span></div>
+  </div>
+</section>
+
+<section id="s2">
+  <p class="q">1日に何度もくり返す授乳で</p>
+  <h2>こんなこと、<br>ありませんか？</h2>
+  <ul>
+    <li><svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="20" fill="#e6ede7"/><path d="M12 22l7 7 13-14" stroke="#7f9a86" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>授乳のあと、腕と肩がパンパンになる</li>
+    <li><svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="20" fill="#e6ede7"/><path d="M12 22l7 7 13-14" stroke="#7f9a86" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>前かがみになって、腰まで痛くなる</li>
+    <li><svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="20" fill="#e6ede7"/><path d="M12 22l7 7 13-14" stroke="#7f9a86" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>クッションの高さが合わず、タオルで調整している</li>
+    <li><svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="20" fill="#e6ede7"/><path d="M12 22l7 7 13-14" stroke="#7f9a86" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>ミルクの吐き戻しで、すぐ汚れてしまう</li>
+  </ul>
+  <div class="arrow"></div>
+  <p class="answer">その疲れ、<mark>赤ちゃんの高さ</mark>が<br>合っていないことが原因かもしれません。</p>
+</section>
+
+<section id="s3">
+  <span class="en">Three Points</span>
+  <h2>ふわりとの<br>3つのこだわり</h2>
+  <div class="cards">
+    <div class="card"><span class="num">01</span><div><h3>高さを2段階に変えられる</h3><p>中のパッドを抜き差しするだけ。<br>ママの体格にも、赤ちゃんの成長にも。</p></div></div>
+    <div class="card"><span class="num">02</span><div><h3>6重ガーゼのやさしいカバー</h3><p>綿100%で、赤ちゃんの肌にふんわり。<br>外して洗濯機で洗えます。</p></div></div>
+    <div class="card"><span class="num">03</span><div><h3>授乳期のあとも使える</h3><p>おすわりのサポートや腰当てに。<br>長く使えるから、出産祝いにも。</p></div></div>
+  </div>
+</section>
+
+<section id="s4">
+  <div class="pointhead"><span class="num">01</span><span class="en">Adjustable Height</span></div>
+  <h2>パッド1枚で、<br>高さを2段階に。</h2>
+  <p class="lead">赤ちゃんの口が、ママの胸の高さに来ると<br>腕で持ち上げなくてよくなります。</p>
+  <div class="diagram">
+    <figure>
+      <svg width="300" height="230" viewBox="0 0 300 230"><rect x="10" y="40" width="280" height="150" rx="75" fill="#e6ede7" stroke="#7f9a86" stroke-width="3"/><rect x="40" y="70" width="220" height="40" rx="20" fill="#fff" stroke="#d49c96" stroke-width="3" stroke-dasharray="8 6"/><text x="150" y="97" text-anchor="middle" font-size="19" font-family="Zen Maru Gothic" fill="#b0605a" font-weight="700">調整パッド</text><path d="M285 40 L285 190" stroke="#4a4440" stroke-width="2"/><path d="M278 40 L292 40 M278 190 L292 190" stroke="#4a4440" stroke-width="2"/></svg>
+      <figcaption>パッドあり　約17cm<small>新生児期・小柄な方に</small></figcaption>
+    </figure>
+    <figure>
+      <svg width="300" height="230" viewBox="0 0 300 230"><rect x="10" y="64" width="280" height="126" rx="63" fill="#e6ede7" stroke="#7f9a86" stroke-width="3"/><path d="M285 64 L285 190" stroke="#4a4440" stroke-width="2"/><path d="M278 64 L292 64 M278 190 L292 190" stroke="#4a4440" stroke-width="2"/></svg>
+      <figcaption>パッドなし　約14cm<small>赤ちゃんが大きくなったら</small></figcaption>
+    </figure>
+  </div>
+  <p class="tip">ソファでもベッドでも、座る場所に合わせて高さを選べます。パッドはファスナーを開けて出し入れするだけです。</p>
+</section>
+
+<section id="s5">
+  <div class="pointhead"><span class="num">02</span><span class="en">Double Gauze Cover</span></div>
+  <h2>肌に触れるのは、<br>綿100%の6重ガーゼ。</h2>
+  <div class="photo"><img src="../img/fabric.jpg" alt=""><div class="layers">6枚重ねで、ふんわり厚手</div></div>
+  <div class="row">
+    <img src="../img/wash.jpg" alt="">
+    <div>
+      <h3>汚れたら、<br>外して洗濯機へ。</h3>
+      <p>吐き戻しやミルクの汚れも気にせず使えます。洗うほどに、やわらかくなじみます。</p>
+      <div class="care"><span>洗濯ネット</span><span>30℃まで</span><span>陰干し</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="s6">
+  <div class="pointhead"><span class="num">03</span><span class="en">After Nursing</span></div>
+  <h2>授乳期のあとも、<br>4通りに使えます。</h2>
+  <div class="grid">
+    <div class="use"><svg width="120" height="90" viewBox="0 0 120 90"><path d="M15 60 Q60 95 105 60 Q110 40 95 40 Q60 70 25 40 Q10 40 15 60Z" fill="#e6ede7" stroke="#7f9a86" stroke-width="3"/><circle cx="60" cy="38" r="12" fill="#f3dcd6"/></svg><div class="age">0か月ごろ〜</div><h3>授乳クッション</h3></div>
+    <div class="use"><svg width="120" height="90" viewBox="0 0 120 90"><path d="M20 70 Q60 92 100 70 Q104 50 92 50 Q60 74 28 50 Q16 50 20 70Z" fill="#e6ede7" stroke="#7f9a86" stroke-width="3"/><circle cx="60" cy="26" r="11" fill="#f3dcd6"/><rect x="50" y="38" width="20" height="26" rx="10" fill="#f3dcd6"/></svg><div class="age">6か月ごろ〜</div><h3>おすわりサポート</h3></div>
+    <div class="use"><svg width="120" height="90" viewBox="0 0 120 90"><rect x="30" y="20" width="60" height="56" rx="20" fill="#f3dcd6"/><path d="M18 62 Q60 84 102 62" stroke="#7f9a86" stroke-width="16" fill="none" stroke-linecap="round" opacity=".55"/></svg><div class="age">妊娠中</div><h3>腰当てクッション</h3></div>
+    <div class="use"><svg width="120" height="90" viewBox="0 0 120 90"><path d="M15 60 Q60 90 105 60 Q110 38 95 38 Q60 64 25 38 Q10 38 15 60Z" fill="#e6ede7" stroke="#7f9a86" stroke-width="3"/><path d="M40 30 h40" stroke="#d49c96" stroke-width="5" stroke-linecap="round"/></svg><div class="age">家族みんなで</div><h3>ソファのクッション</h3></div>
+  </div>
+  <p class="note"><b>ご注意ください</b>　寝かしつけやうつぶせ寝には使わないでください。おすわりサポートとして使うときは、必ず大人がそばで見守ってください。</p>
+</section>
+
+<section id="s7">
+  <span class="en">Color Variation</span>
+  <h2>お部屋になじむ、<br>やさしい3色。</h2>
+  <img src="../img/colors.jpg" alt="">
+  <div class="chips">
+    <div class="chip"><i style="background:#a9bfae"></i>セージ<small>落ち着いた緑</small></div>
+    <div class="chip"><i style="background:#e6d6bf"></i>オートミール<small>あたたかい生成り</small></div>
+    <div class="chip"><i style="background:#e9b9b3"></i>ローズ<small>くすんだピンク</small></div>
+  </div>
+</section>
+
+<section id="s8">
+  <span class="en">Specification</span>
+  <h2>商品仕様</h2>
+  <table>
+    <tr><th>サイズ</th><td>約 幅58 × 奥行48 × 高さ17cm<br>（調整パッドを抜くと高さ約14cm）</td></tr>
+    <tr><th>素材</th><td>カバー：綿100%（6重ガーゼ）<br>本体・中綿：ポリエステル100%</td></tr>
+    <tr><th>お手入れ</th><td>カバー：洗濯ネットに入れて洗濯機可（30℃まで）<br>本体：手洗い</td></tr>
+    <tr><th>カラー</th><td>セージ／オートミール／ローズ</td></tr>
+    <tr><th>セット内容</th><td>本体、カバー、調整パッド各1</td></tr>
+  </table>
+  <div class="gift">
+    <svg width="90" height="90" viewBox="0 0 90 90"><rect x="12" y="34" width="66" height="46" rx="6" fill="#fff" stroke="#d49c96" stroke-width="3"/><rect x="8" y="24" width="74" height="16" rx="5" fill="#f3dcd6"/><path d="M45 24 V80" stroke="#d49c96" stroke-width="5"/><path d="M45 24 C30 6 18 18 30 24 M45 24 C60 6 72 18 60 24" stroke="#d49c96" stroke-width="4" fill="none"/></svg>
+    <div><h3>出産祝いのラッピング</h3><p>のしとメッセージカードをお選びいただけます。<br>カートの「ラッピング」からお申し込みください。</p></div>
+  </div>
+</section>
+
+</body>
+</html>
